@@ -52,3 +52,7 @@ def renderExtraPage():
     else:
         Entries = QueryDB()
         return render_template("extra.html", Entries=Entries)
+    
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
