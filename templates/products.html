@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>products</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            .bg-primary {
+                background-color: #01857e !important;
+            }
+            .bg-secondary {
+                background-color: #aec5ca !important;
+            }
+            .link-primary {
+                color: white !important;
+            }
+            .link-primary:hover {
+                color: #0d2333 !important;
+            }
+            .btn-primary {
+                background-color: #01857e;
+                /* border-color: #014e4a; */
+                border: none;
+                font-weight: 600;
+                font-size: large;
+            }
+            .btn-primary:hover {
+                background-color: #00615d;
+                border: none;
+            }
+            header h1 {
+                font-weight: 900;
+            }
+            header {
+                font-family: "Courier New", arial;
+                font-weight: 900;
+                font-size: large;
+            }
+            body {
+                font-weight: 600;
+                font-size: large;
+            }
+            h2 {
+                font-weight: 900;
+            }
+            table td {
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <header>
+            <nav class="navbar navbar-expand-md bg-primary py-0">
+                <div class="container-fluid p-0 px-md-5">
+                    <a
+                        href="{{ url_for('renderHomePage') }}"
+                        class="navbar-brand px-0 px-md-5 w-auto"
+                    >
+                        <p class="text-center text-white h1 fw-bold">
+                            Giggles Galore
+                        </p>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#GigglesGaloreNavbar"
+                        aria-controls="GigglesGaloreNavbar"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="GigglesGaloreNavbar"
+                    >
+                        <ul class="navbar-nav">
+                            <li>
+                                <a
+                                    href="{{ url_for('renderProductsPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >products</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderAboutPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >about</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderContactPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >contact</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderExtraPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >extra</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container bg-white rounded-top-5">
+            <div class="row pt-3 px-3 px-md-5 align-items-stretch">
+                <div class="col-6 col-md-4 my-3 px-lg-5">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div>
+                            <img
+                                src="../static/Smile.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 30%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Smile</p>
+                            <p id="itemPrice" class="mt-auto">$14.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(14.99, 'smile')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 my-3 px-lg-5">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div>
+                            <img
+                                src="../static/Giggle.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 20%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Giggle</p>
+                            <p id="itemPrice" class="mt-auto">$29.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(29.99, 'giggle')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 my-3 px-lg-5 d-flex flex-column">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div class="overflow-hidden">
+                            <img
+                                src="../static/Laugh.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 30%;
+                                    transform: scale(1.1);
+                                    transform-origin: 100% 50%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Laugh</p>
+                            <p id="itemPrice" class="mt-auto">$49.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(49.99, 'laugh')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row justify-content-center" style="height: 100px; background: lightpink">
+            <p class="fw-bold text-center py-2">Employee of the month</p>
+            <p class="col-4 text-center" style="background: white;">there</p>
+        </div> -->
+        </div>
+
+        <div class="container bg-secondary">
+            <div class="d-flex justify-content-center">
+                <h2 class="fw-bold text-center py-4">Accessories</h2>
+            </div>
+            <div class="row pt-3 px-3 px-md-5 align-items-stretch">
+                <div class="col-6 col-md-4 my-3 px-lg-5">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div>
+                            <img
+                                src="../static/Wheeze.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 30%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Wheeze</p>
+                            <p id="itemPrice" class="mt-auto">$4.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(4.99, 'wheeze')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 my-3 px-lg-5">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div>
+                            <img
+                                src="../static/KneeSlap.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 20%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Knee Slap</p>
+                            <p id="itemPrice" class="mt-auto">$14.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(14.99, 'knee slap')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 my-3 px-lg-5 d-flex flex-column">
+                    <div
+                        class="bg-white h-100 d-flex flex-column border border-3 rounded-3"
+                    >
+                        <div class="overflow-hidden">
+                            <img
+                                src="../static/Tear.png"
+                                alt=""
+                                class="w-100 object-fit-cover"
+                                style="
+                                    aspect-ratio: 1/1;
+                                    object-position: 50% 30%;
+                                    transform: scale(1.1);
+                                    transform-origin: 100% 50%;
+                                    background-color: #fff8ec;
+                                "
+                            />
+                        </div>
+                        <div class="p-2 p-md-3">
+                            <p>Tears of joy</p>
+                            <p id="itemPrice" class="mt-auto">$9.99</p>
+                            <button
+                                class="btn btn-primary w-100"
+                                onclick="addToCart(9.99, 'tears of joy')"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // let price = Number(document.getElementById("itemPrice").innerHTML);
+            window.dataLayer = window.dataLayer || [];
+            let total = 0;
+
+            function addToCart(itemPrice, itemName) {
+                console.log("Add To Cart Event triggered");
+                total = total + itemPrice;
+
+                window.dataLayer.push({
+                    event: "add_to_cart",
+                    ecommerce: {
+                        item_name: itemName,
+                        price: itemPrice,
+                        currency: "USD",
+                    },
+                });
+
+                console.log("Data layer updated:", window.dataLayer);
+            }
+        </script>
+    </body>
+</html>

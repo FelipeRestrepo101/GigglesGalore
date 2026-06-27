@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>extra</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            .bg-primary {
+                background-color: #01857e !important;
+            }
+            .bg-secondary {
+                background-color: #aec5ca !important;
+            }
+            .link-primary {
+                color: white !important;
+            }
+            .link-primary:hover {
+                color: #0d2333 !important;
+            }
+            .btn-primary {
+                background-color: #01857e;
+                /* border-color: #014e4a; */
+                border: none;
+                font-weight: 600;
+                font-size: large;
+            }
+            .btn-primary:hover {
+                background-color: #00615d;
+                border: none;
+            }
+            header h1 {
+                font-weight: 900;
+            }
+            header {
+                font-family: "Courier New", arial;
+                font-weight: 900;
+                font-size: large;
+            }
+            body {
+                font-weight: 600;
+                font-size: large;
+            }
+            h2 {
+                font-weight: 900;
+            }
+            table td {
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <header>
+            <nav class="navbar navbar-expand-md bg-primary py-0">
+                <div class="container-fluid p-0 px-md-5">
+                    <a
+                        href="{{ url_for('renderHomePage') }}"
+                        class="navbar-brand px-0 px-md-5 w-auto"
+                    >
+                        <p class="text-center text-white h1 fw-bold">
+                            Giggles Galore
+                        </p>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#GigglesGaloreNavbar"
+                        aria-controls="GigglesGaloreNavbar"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="GigglesGaloreNavbar"
+                    >
+                        <ul class="navbar-nav">
+                            <li>
+                                <a
+                                    href="{{ url_for('renderProductsPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >products</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderAboutPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >about</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderContactPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >contact</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="{{ url_for('renderExtraPage') }}"
+                                    class="nav-item text-center link-primary text-decoration-none px-2"
+                                    >extra</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container rounded-top-5 bg-secondary">
+            <div class="text-center pt-5">
+                <h2 class="text-center">Employee of the Year</h2>
+                <p style="font-size: 2rem !important;">Gloria</p>
+                <p class="d-block mx-auto text-center" style="max-width: 750px">
+                    "Gloria was so nice and so helpful, she made me giggle so hard
+                    I almost let out a laugh for free. Truly grateful for the
+                    service and expertise they provide here"
+                </p>
+            </div>
+            <div class="pb-5 px-2 px-md-5 d-flex flex-wrap justify-content-center">
+                <h2 class="text-center">Customer Comments</h2>
+                <table class="table table-striped-columns border-2 border-secondary fs-6" style="table-layout: fixed;">
+                    <thead>
+                        <th class="w-25">User</th>
+                        <th class="w-75">Comments</th>
+                    </thead>
+                    <tr>
+                        <td>{{ Entries[0][0] }}</td>
+                        <td>{{ Entries[0][1] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ Entries[1][0] }}</td>
+                        <td>{{ Entries[1][1] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ Entries[2][0] }}</td>
+                        <td>{{ Entries[2][1] }}</td>
+                    </tr>
+                </table>
+                <div>
+                    <h2>Submit a comment!</h2>
+                    <form action="" method="post">
+                        <label for="Username">Username</label>
+                        <input id="Username" type="text" name="Username" class="mb-2">
+                        <br>
+                        <label for="Comments">Comments</label>
+                        <input id="Comments" type="text" name="Comments">
+                        <br>
+                        <button type="submit" class="mt-3 d-block mx-auto">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container bg-primary">
+            <div class="text-center py-5">
+                <h2 class="text-center">An interview with our CEO</h2>
+                <p class="d-block mx-auto text-center" style="max-width: 750px">
+                    Jared was so nice and so helpful, he made me giggle so hard
+                    I almost let out a laugh myself. Truly grateful for the
+                    service and expertise they provide here
+                </p>
+            </div>
+        </div>
+
+        <div class="container bg-white">
+            <div>
+                <form action="">
+                    <label for=""></label>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

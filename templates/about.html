@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            .bg-primary {
+                background-color: #01857e !important;
+            }
+            .bg-secondary {
+                background-color: #aec5ca !important;
+            }
+            .link-primary {
+                color: white !important;
+            }
+            .link-primary:hover {
+                color: #0d2333 !important;
+            }
+            .btn-primary {
+                background-color: #01857e;
+                /* border-color: #014e4a; */
+                border: none;
+                font-weight: 600;
+                font-size: large;
+            }
+            .btn-primary:hover {
+                background-color: #00615d;
+                border: none;
+            }
+            header h1 {
+                font-weight: 900;
+            }
+            header {
+                font-family: "Courier New", arial;
+                font-weight: 900;
+                font-size: large;
+            }
+            body {
+                font-weight: 600;
+                font-size: large;
+            }
+            h2 {
+                font-weight: 900;
+            }
+            table td {
+                word-wrap: break-word !important;
+                word-break: break-word !important;
+            }
+        </style>
+    </head>
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary py-0">
+            <div class="container-fluid p-0 px-md-5">
+                <a
+                    href="{{ url_for('renderHomePage') }}"
+                    class="navbar-brand px-0 px-md-5 w-auto"
+                >
+                    <p class="text-center text-white h1 fw-bold">
+                        Giggles Galore
+                    </p>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#GigglesGaloreNavbar"
+                    aria-controls="GigglesGaloreNavbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="GigglesGaloreNavbar"
+                >
+                    <ul class="navbar-nav">
+                        <li>
+                            <a
+                                href="{{ url_for('renderProductsPage') }}"
+                                class="nav-item text-center link-primary text-decoration-none px-2"
+                                >products</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('renderAboutPage') }}"
+                                class="nav-item text-center link-primary text-decoration-none px-2"
+                                >about</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('renderContactPage') }}"
+                                class="nav-item text-center link-primary text-decoration-none px-2"
+                                >contact</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="{{ url_for('renderExtraPage') }}"
+                                class="nav-item text-center link-primary text-decoration-none px-2"
+                                >extra</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container bg-secondary px-0 px-md-5">
+        <div class="hp-block row justify-content-center justify-content-md-start">
+            <div class="col-8 col-md-6 my-5 ms-0 ms-md-5 px-0 text-center text-md-start">
+                <h2>Sometimes the unexpected happens</h2>
+                <p>In 1994 Gideon Giggly was nothing more than a simple woodshop worker, freshly out of highschool with 5 siblings to look after he scoured for ways to put food on the table. With nothing more then his sibling smiles to keep him going an idea came to his head. With giggles the value of gold he felt the need to share them with the world. A world where anyone, anywhere, at any time could giggle to their heart's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-primary px-0 px-md-5">
+        <div class="hp-block row justify-content-center justify-content-md-end">
+            <div class="col-8 col-md-6 my-5 me-0 me-md-5 px-0 text-center text-md-end">
+                <h2>A Dream Pursued</h2>
+                <p>Over the next few months, Giggly traveled from house to house, offering his giggle services until he raised enough money to purchase the woodshop where he once worked. After setting up shop, Gideon officially named his business "Giggles Galore." During this time, the country was going through a difficult period, and word of Giggly's services spread quickly. Giggles Galore took the nation by storm and soon became a household name. Fast forward to today, and Giggles Galore is still impacting the lives of millions as the company continues to follow in the footsteps of Gideon Giggly. Although he may no longer be with us, his legacy and dreams remain at the heart of the company.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-white px-0 px-md-5">
+        <div class="hp-block row justify-content-center">
+            <div class="col-8 col-md-6 my-5 ms-0 ms-md-5 px-0 text-center">
+                <h2>Gideon's Vision for the Future</h2>
+                <p>Not only did Gideon want to spread giggles throughout the world, but he also wanted to ensure they were sourced ethically. Many competitors have attempted to formulate and genetically modify giggles but have been unsuccessful in recreating the quality that comes from a natural source. As Giggles Galore continues to offer new solutions to customers, environmental awareness and quality will remain top priorities. After all, what is a giggle without a world?</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
