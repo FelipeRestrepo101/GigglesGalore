@@ -17,7 +17,7 @@ def QueryDB():
 
 # Insert into Database
 def InsertDB(Username, Comments):
-    con = sqlite3.connect("./DBFolder/GigglesGalore.db")
+    con = sqlite3.connect("GigglesGalore.db")
     cur = con.cursor()
     cur.execute(f"INSERT INTO CustomerComments VALUES ('{Username}','{Comments}')")
     con.commit()
