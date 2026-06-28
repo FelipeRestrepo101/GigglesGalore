@@ -6,7 +6,7 @@ import sqlite3
 
 # Query Database
 def QueryDB():
-    con = sqlite3.connect("./DBFolder/GigglesGalore.db")
+    con = sqlite3.connect("GigglesGalore.db")
     cur = con.cursor()
     res = cur.execute("SELECT * FROM CustomerComments ORDER BY rowid DESC LIMIT 3").fetchall()
     return res
