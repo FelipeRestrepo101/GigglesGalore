@@ -6,9 +6,10 @@ import sqlite3
 
 # Query Database
 def QueryDB():
-    con = sqlite3.connect("GigglesGalore.db")
+    con = sqlite3.connect("./DBFolder/GigglesGalore.db")
     cur = con.cursor()
     res = cur.execute("SELECT * FROM CustomerComments ORDER BY rowid DESC LIMIT 3").fetchall()
+    con.close()
     return res
     # print(type(res))
     # print(res)
@@ -17,11 +18,11 @@ def QueryDB():
 
 # Insert into Database
 def InsertDB(Username, Comments):
-    con = sqlite3.connect("GigglesGalore.db")
+    con = sqlite3.connect("./DBFolder/GigglesGalore.db")
     cur = con.cursor()
     cur.execute(f"INSERT INTO CustomerComments VALUES ('{Username}','{Comments}')")
     con.commit()
-
+    con.close()
 
 app = Flask(__name__)
 
