@@ -316,27 +316,11 @@
         </div>
 
         <script>
-            // This is the embedded function version of adding click events to a manual click array
-            clickArray = []
-            document.addEventListener('click', function(){
-                clickArray.push({'eventTarget:': event.target, 'classList:': event.target.classList.value})
-            })
-
-
-            // This is the function reference + function call version of adding click events to a manual click array
-            function pageClick() {
-                clickArray.push({'eventTarget:': event.target, 'classList:': event.target.classList.value})
-            } 
-            clickArray = []
-            document.addEventListener('click', pageClick)  
-
-
-            // This is the embedded function version of adding click events with the official gtag function
             document.addEventListener('click', (event) =>  {
                     const targetEl = event.target;
-                    gtag('event', 'pageClick', {
+                    gtag('event', 'page_click', {
                         'event_target': targetEl.tagName.toLowerCase(),
-                        'class_list:': targetEl.classList.value
+                        'class_list:': targetEl.classList.value || ""
                     })
                 }
             )
